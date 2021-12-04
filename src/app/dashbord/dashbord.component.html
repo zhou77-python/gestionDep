@@ -1,0 +1,42 @@
+<div class="container-fluid page">
+    <div class="page__box p-3 mt-2">MES OPERATIONS</div>
+    <div class="page__content shadow p-3 position-relative">
+        <div class="page__content-data position-absolute">
+          <mat-card id="mat-card_2"></mat-card>
+          <mat-card id="mat-card_1">
+            <mat-form-field id="tailleInput" appearance="fill">
+            <mat-label>Input</mat-label>
+            <input  matInput>
+          </mat-form-field></mat-card>
+            <mat-card id="mat-card" >
+                <mat-form-field class="taille" appearance="fill">
+                  <div class="taille"> 
+                <mat-label>types dépense</mat-label>
+                <mat-select [formControl]="toppings" multiple>
+                  <mat-select-trigger>
+                    {{toppings.value ? toppings.value[0] : ''}}
+                    <span *ngIf="toppings.value?.length > 1" class="example-additional-selection">
+                      (+{{toppings.value.length - 1}} {{toppings.value?.length === 2 ? 'other' : 'others'}})
+                    </span>
+                  </mat-select-trigger>
+                  <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+                </mat-select>
+              </div>
+              </mat-form-field>
+              <h1 id="input">
+                <mat-form-field id="tailleInput" appearance="fill">
+                  <mat-label>Input</mat-label>
+                  <input  matInput>
+                </mat-form-field>
+              </h1>
+            </mat-card>
+            <div class="titre_achats">enregistrer un achats </div>
+            <div class="titre_salaire">nouvelle salaire</div>
+            <div class="titre_solde">solde actuelle</div>
+            <div class="titre_prix">le prix  </div>
+        </div>
+
+    </div>
+
+</div>
+
